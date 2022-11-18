@@ -69,6 +69,9 @@ public class TestManyToMany {
                 Person pp = session.find(Person.class,3L);
                 Address at = session.find(Address.class,2L);
 
+                pp.getAddresses().remove(at);
+                session.merge(pp);
+
                 session.getTransaction().commit();
             }catch (RuntimeException ex){
                 if (session.getTransaction()!= null){

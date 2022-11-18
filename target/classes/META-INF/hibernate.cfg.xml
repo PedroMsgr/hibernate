@@ -10,5 +10,10 @@
         <property name="show_sql">true</property>
 
         <mapping class="es.severo.persistence.entity.Tramite"></mapping>
+        <mapping class="es.severo.persistence.entity.Book"></mapping>
+        <mapping class="es.severo.persistence.entity.Chapter"></mapping>
+        <mapping class="es.severo.persistence.entity.Person"></mapping>
+        <mapping class="es.severo.persistence.entity.Presupuesto"></mapping>
+        <mapping class="es.severo.persistence.entity.Address"></mapping>
     </session-factory>
 </hibernate-configuration>
