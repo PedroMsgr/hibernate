@@ -19,6 +19,9 @@ public class Address {
     @Column(nullable = false)
     private String number;
 
+    @ManyToMany(mappedBy = "addresses")
+    private List<Person> people = new ArrayList<>();
+
     public Address() {
     }
 

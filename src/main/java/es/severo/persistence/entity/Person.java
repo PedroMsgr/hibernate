@@ -1,6 +1,5 @@
 package es.severo.persistence.entity;
 
-import com.mysql.cj.xdevapi.AddResult;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -15,10 +14,10 @@ public class Person {
     private Long id;
 
     @Column(nullable = false)
-    private String nanme;
+    private String name;
 
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(name= "person_has_address", joinColumns = @JoinColumn(name = "person_id"),
             inverseJoinColumns = @JoinColumn(name = "address_id"))
     List<Address> addresses = new ArrayList<>();
@@ -27,8 +26,8 @@ public class Person {
     public Person() {
     }
 
-    public Person(String nanme) {
-        this.nanme = nanme;
+    public Person(String name) {
+        this.name = name;
     }
 
     public Long getId() {
@@ -39,12 +38,12 @@ public class Person {
         this.id = id;
     }
 
-    public String getNanme() {
-        return nanme;
+    public String getName() {
+        return name;
     }
 
-    public void setNanme(String nanme) {
-        this.nanme = nanme;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<Address> getAddresses() {
@@ -59,7 +58,7 @@ public class Person {
     public String toString() {
         return "Person{" +
                 "id=" + id +
-                ", nanme='" + nanme + '\'' +
+                ", nanme='" + name + '\'' +
                 '}';
     }
 }

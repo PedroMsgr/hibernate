@@ -17,6 +17,8 @@ public class Tramite {
     @Column(name = "fecha_tramite")
     private LocalDateTime fecha;
 
+    @OneToOne(mappedBy = "tramite",cascade = CascadeType.REMOVE)
+    private Presupuesto presupuesto;
     public Tramite() {
     }
 
