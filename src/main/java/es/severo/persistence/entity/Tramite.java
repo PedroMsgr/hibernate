@@ -52,6 +52,7 @@ public class Tramite {
                 "id=" + id +
                 ", tipo='" + tipo + '\'' +
                 ", fecha=" + fecha +
+                ", presupuesto=" + presupuesto +
                 '}';
     }
 }

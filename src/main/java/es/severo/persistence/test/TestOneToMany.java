@@ -48,6 +48,7 @@ public class TestOneToMany {
                 //Libros
                 CriteriaBuilder builder = session.getCriteriaBuilder();
                 CriteriaQuery<Book> criteriaQuery = builder.createQuery(Book.class);
+
                 Root<Book> root = criteriaQuery.from(Book.class);
 
                 //Join<Book, Chapter> join = root.join(Book_.chapters);
@@ -69,7 +70,6 @@ public class TestOneToMany {
                                 );
                 List<Chapter> chapters = session.createQuery(criteria).getResultList();
                 chapters.forEach(System.out::println);
-
 
                 session.getTransaction().commit();
             } catch (RuntimeException ex){

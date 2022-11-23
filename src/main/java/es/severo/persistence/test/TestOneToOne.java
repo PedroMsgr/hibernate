@@ -50,6 +50,7 @@ public class TestOneToOne {
 
                 Presupuesto pdp = session.find(Presupuesto.class,2L);
                 session.remove(pdp);
+
                 session.getTransaction().commit();
             } catch (RuntimeException ex){
                 if(session.getTransaction() != null){

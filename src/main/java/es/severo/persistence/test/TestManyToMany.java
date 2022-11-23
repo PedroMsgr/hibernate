@@ -33,6 +33,7 @@ public class TestManyToMany {
                 p1.getAddresses().add(a1);
                 p2.getAddresses().add(a2);
                 p3.getAddresses().add(a3);
+
                 session.persist(p1);
                 session.persist(p2);
                 session.persist(p3);

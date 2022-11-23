@@ -54,11 +54,13 @@ public class Person {
         this.addresses = addresses;
     }
 
+
     @Override
     public String toString() {
         return "Person{" +
                 "id=" + id +
-                ", nanme='" + name + '\'' +
+                ", name='" + name + '\'' +
+                ", addresses=" + addresses +
                 '}';
     }
 }
